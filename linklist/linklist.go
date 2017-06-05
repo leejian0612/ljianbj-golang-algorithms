@@ -9,11 +9,11 @@ type LinkList struct {
 }
 
 type LinkNode struct {
-	Value interface{}
+	Value int
 	Next  *LinkNode
 }
 
-func Insert(value interface{}, list *LinkList) {
+func Insert(value int, list *LinkList) {
 	node := &LinkNode{value, nil}
 	if list == nil {
 		list = &LinkList{}
@@ -44,9 +44,9 @@ func PrintList(list *LinkList) {
 	}
 
 	node := list.head
-	fmt.Printf("%v\n", node.Value)
+	fmt.Printf("%v ", node.Value)
 	for node.Next != nil {
 		node = node.Next
-		fmt.Printf("%v\n", node.Value)
+		fmt.Printf("%v ", node.Value)
 	}
 }
